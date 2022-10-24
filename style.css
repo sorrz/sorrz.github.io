@@ -1,0 +1,36 @@
+body {
+    background-color: rgb(20, 20, 20);
+    margin: 0px;
+}
+
+menu {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+
+}
+
+.menu-item{
+    color: white;
+    font-size: clamp(3rem, 8vw, 8rem);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    display: block;
+    text-decoration: none;
+    padding: clamp(0.25rem, 0.5vw, 1rem) 0 rem;
+    transition: opacity 300ms ease;
+
+}
+
+#menu-items {
+    margin-left: clamp(4rem, 20vw, 48rem);
+}
+
+#menu-items:hover > .menu-item {
+    opacity: 0.3;
+
+}
+
+#menu-items:hover > .menu-item {
+    opacity: 1;
+}
