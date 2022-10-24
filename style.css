@@ -88,6 +88,35 @@ menu {
     top: 0px;
     z-index: 0;
 
+    background-position: center 40%;
+    background-size: 110vmax;
+    opacity: 0.13;
+
+    transition: opacity 700ms ease,
+        background-size 800ms ease,
+        backgorund-position 800ms ease;
+
+}
+
+#menu-items:hover ~ #menu-background-image {
+    background-size: 100vmax;
+    opacity: 0.09;
+}
 
 
+
+#menu[data-active-index="0"] > #menu-background-image {
+    background-position: 0% - 45%;
+}
+
+#menu[data-active-index="1"] > #menu-background-image {
+    background-position: 0% - 50%;
+}
+
+#menu[data-active-index="2"] > #menu-background-image {
+    background-position: 0% - 55%;
+}
+
+#menu[data-active-index="3"] > #menu-background-image {
+    background-position: 0% - 60%;
 }
