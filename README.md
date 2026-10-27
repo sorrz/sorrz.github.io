@@ -27,6 +27,6 @@ Open `index.html` in a browser, or run `npx serve .`.
 
 ## Editing content
 
-Projects live in `index.html` under `<!-- ===== 04 FILES ===== -->`. Copy a `.file-wrap` block,
+Projects live in `index.html` under `<!-- ===== 05 FILES ===== -->`. Copy a `.file-wrap` block,
 alternate its `data-speed` sign, and use `st--ok` + a link for public repos or `st--lock` +
 `ACCESS DENIED` for private ones.

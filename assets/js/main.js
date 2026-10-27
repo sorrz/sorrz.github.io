@@ -178,7 +178,7 @@
         glitch(e.target, 420);
       });
     }, { threshold: 0.6 });
-    document.querySelectorAll('.sect-head h2').forEach((h) => io.observe(h));
+    document.querySelectorAll('.sect-head h2, .log-num .stat').forEach((h) => io.observe(h));
   }
 
   /* ---------- glitch bursts ---------- */
