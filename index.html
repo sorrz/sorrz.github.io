@@ -1,67 +1,371 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Testing Out new Stuff</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dan Stjärnborg — QA Lead · DevOps · Developer</title>
+  <meta name="description" content="Portfolio of Dan Stjärnborg — QA Lead, DevOps and developer. Architecture, infrastructure, Kubernetes, Docker, Azure and cloud deployment.">
+  <meta name="theme-color" content="#07080b">
+  <meta property="og:title" content="Dan Stjärnborg — QA Lead · DevOps · Developer">
+  <meta property="og:description" content="Testing it, shipping it, and building the platforms it runs on.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%2307080b'/%3E%3Crect x='2' y='3' width='9' height='3' fill='%2300e5ff'/%3E%3Crect x='5' y='7' width='9' height='3' fill='%23ff2bd6'/%3E%3Crect x='3' y='11' width='6' height='2' fill='%23e8e6e1'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
+  <a class="skip" href="#whoami">Skip to content</a>
 
+  <!-- ===== Fixed layer: these glitches hold in place while the page scrolls under them ===== -->
+  <div class="fx" aria-hidden="true">
+    <canvas id="noise" class="fx-noise"></canvas>
+    <div class="fx-scan"></div>
+    <div class="fx-vignette"></div>
+    <div class="fx-deadcol"></div>
+    <div class="fx-deadpx"><i></i><i></i><i></i></div>
+    <div class="fx-stuckline"><span>LN 0442 · ERR_FB_DESYNC</span></div>
+    <div class="fx-tear" id="tear"></div>
+  </div>
 
-<div id="cards">
-    <div class="card">
-        <div class="card-content">
-            <div class="card-image">
-                <i class="DuoTone About"></i>
-            </div>
-            <div class="card-info-wrapper">
-                <div class="card-info">
-                    <i class="fa-about"></i>
-                    <div class="card-info-title">
-                        <h3>About me</h3>
-                        <h4>Currently Studying software development and system design. </h4>
-                    </div>
-                </div>
-            </div>
+  <header class="hud">
+    <a class="hud-logo" href="#boot" aria-label="Back to top">DS<span>//</span></a>
+    <nav class="hud-nav" aria-label="Sections">
+      <a href="#whoami">01 whoami</a>
+      <a href="#modules">02 modules</a>
+      <a href="#stack">03 stack</a>
+      <a href="#files">04 files</a>
+      <a href="#eot">05 contact</a>
+    </nav>
+    <p class="hud-signal" aria-hidden="true">
+      <span class="sig-bars"><i></i><i></i><i></i><i></i></span>
+      <span>SECTOR <b id="hud-sector">00</b>/05 · <b id="hud-pct">000</b>%</span>
+    </p>
+  </header>
+
+  <main id="main">
+
+    <!-- ===== 00 BOOT ===== -->
+    <section id="boot" class="sect hero" data-sector="00">
+      <div class="sect-bg" aria-hidden="true">
+        <div class="shard shard--bars" data-speed="0.55" style="--x:68%;--y:14%;--w:min(34vw,420px);--r:-3deg"></div>
+        <pre class="shard shard--hex" data-speed="0.3" data-hex="9" style="--x:4%;--y:62%"></pre>
+        <div class="shard shard--block" data-speed="-0.25" style="--x:82%;--y:70%;--w:120px;--h:10px;--c:var(--cyan)"></div>
+        <div class="shard shard--block" data-speed="0.7" style="--x:58%;--y:86%;--w:240px;--h:3px;--c:var(--magenta)"></div>
+        <div class="shard shard--pixels" data-speed="-0.4" style="--x:12%;--y:18%"></div>
+      </div>
+
+      <div class="hero-inner">
+        <pre class="bootlog" id="bootlog" aria-hidden="true"></pre>
+        <p class="kicker">// portfolio.sys — rev 2026.10 — Sweden</p>
+        <h1 class="name">
+          <span class="glitch glitch--loud glitchable" data-text="DAN">DAN</span>
+          <span class="glitch glitch--loud glitchable name-2" data-text="STJÄRNBORG">STJÄRNBORG</span>
+        </h1>
+        <p class="roles">
+          <span>QA Lead</span><span class="sep" aria-hidden="true">/</span><span>DevOps</span><span class="sep" aria-hidden="true">/</span><span>Developer</span>
+        </p>
+        <p class="lede">I keep software honest on its way to production: I test it, I ship it, and I build the platforms it runs on.</p>
+        <a class="scroll-cue" href="#whoami"><span>scroll to recover data</span> <b aria-hidden="true">↓</b></a>
+      </div>
+    </section>
+
+    <!-- ===== 01 WHOAMI ===== -->
+    <section id="whoami" class="sect" data-sector="01">
+      <div class="sect-bg" aria-hidden="true">
+        <span class="sect-num">01</span>
+        <span class="shard shard--ghost" data-speed="0.35" style="--x:42%;--y:8%">WHOAMI</span>
+        <pre class="shard shard--hex" data-speed="-0.2" data-hex="6" style="--x:74%;--y:64%"></pre>
+        <div class="shard shard--block" data-speed="0.45" style="--x:6%;--y:88%;--w:180px;--h:6px;--c:var(--amber)"></div>
+      </div>
+
+      <div class="sect-inner">
+        <header class="sect-head">
+          <span class="idx">01</span>
+          <h2 class="glitch glitchable" data-text="WHOAMI">WHOAMI</h2>
+          <span class="rule"></span>
+          <span class="meta">uid=1000(dan)</span>
+        </header>
+
+        <div class="about">
+          <div class="about-text">
+            <p class="big">I work where code meets production.</p>
+            <p>As a <strong>QA Lead</strong> I decide what “done” means and build the gates that prove it. On the <strong>DevOps</strong> side I build the pipelines, containers and deployment tooling that get it shipped. As a <strong>developer</strong> I still write the features, mostly in .NET, TypeScript and Python.</p>
+            <p>Underneath all three is the same interest: <strong>architecture and infrastructure</strong>. That means how systems are cut, how they're hosted on <strong>Docker, Kubernetes and Azure</strong>, and how a release gets from Dev through Test and Acceptance into Prod without breaking what's already live.</p>
+          </div>
+
+          <dl class="spec glitchable">
+            <div><dt>name</dt><dd>Dan Stjärnborg</dd></div>
+            <div><dt>location</dt><dd>Sweden</dd></div>
+            <div><dt>roles</dt><dd>QA Lead · DevOps · Development</dd></div>
+            <div><dt>focus</dt><dd>architecture · infrastructure · cloud deployment</dd></div>
+            <div><dt>runtime</dt><dd>.NET · TypeScript · Python · PowerShell</dd></div>
+            <div><dt>status</dt><dd class="warn">operational <em>(mostly)</em></dd></div>
+          </dl>
         </div>
-    </div>
-    <div class="card">
-        <div class="card-content">
-            <div class="card-image">
-                <i class="DuoTone Portfolio"></i>
-            </div>
-            <div class="card-info-wrapper">
-                <div class="card-info">
-                    <i class="fa-portfolio"></i>
-                    <div class="card-info-title">
-                        <h3>Portfolio</h3>
-                        <h4>A collection of previous projects.</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-content">
-            <div class="card-image">
-                <i class="DuoTone Contact"></i>
-            </div>
-            <div class="card-info-wrapper">
-                <div class="card-info">
-                    <i class="fa-contact"></i>
-                    <div class="card-info-title">
-                        <h3>Contact Me</h3>
-                        <h4>Contact information.</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+      </div>
+    </section>
 
-</div>
+    <!-- ===== 02 MODULES ===== -->
+    <section id="modules" class="sect" data-sector="02">
+      <div class="sect-bg" aria-hidden="true">
+        <span class="sect-num">02</span>
+        <div class="shard shard--bars" data-speed="0.6" style="--x:-4%;--y:30%;--w:min(26vw,300px);--r:4deg"></div>
+        <span class="shard shard--ghost" data-speed="-0.3" style="--x:50%;--y:80%">MODULES</span>
+        <div class="shard shard--pixels" data-speed="0.25" style="--x:86%;--y:12%"></div>
+      </div>
 
-<script src="index.js"></script>
+      <div class="sect-inner">
+        <header class="sect-head">
+          <span class="idx">02</span>
+          <h2 class="glitch glitchable" data-text="LOADED MODULES">LOADED MODULES</h2>
+          <span class="rule"></span>
+          <span class="meta">3 active</span>
+        </header>
+
+        <div class="modules">
+          <div class="mod-wrap" data-speed="0.05">
+            <article class="mod glitchable">
+              <p class="mod-id">mod_qa.ko <span>[ OK ]</span></p>
+              <h3>QA Lead</h3>
+              <ul>
+                <li>Test strategy and quality gates that match what CI actually builds</li>
+                <li>Automated testing from unit and integration up to Playwright E2E</li>
+                <li>DTAP discipline: test data, environment isolation, security testing</li>
+                <li>Flaky-vs-broken triage, regression gates and honest release verdicts</li>
+              </ul>
+            </article>
+          </div>
+          <div class="mod-wrap" data-speed="-0.04">
+            <article class="mod mod--slip glitchable">
+              <p class="mod-id">mod_devops.ko <span>[ OK ]</span></p>
+              <h3>DevOps</h3>
+              <ul>
+                <li>CI/CD pipelines on Azure DevOps and GitHub Actions</li>
+                <li>Containerised services with Docker and Kubernetes</li>
+                <li>Cloud deployment and hosting on Azure</li>
+                <li>Deployment orchestration, agents, and observability with Serilog and Loki</li>
+              </ul>
+            </article>
+          </div>
+          <div class="mod-wrap" data-speed="0.08">
+            <article class="mod glitchable">
+              <p class="mod-id">mod_dev.ko <span class="amber">[ WARN ]</span></p>
+              <h3>Development</h3>
+              <ul>
+                <li>.NET / C#: ASP.NET Core, Blazor, EF Core</li>
+                <li>Layered DDD, CQRS and MediatR when the domain earns it</li>
+                <li>TypeScript front-ends (Vue, React) and Python tooling</li>
+                <li>Local-LLM integrations that keep data on the machine</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 03 STACK ===== -->
+    <section id="stack" class="sect" data-sector="03">
+      <div class="sect-bg" aria-hidden="true">
+        <span class="sect-num">03</span>
+        <pre class="shard shard--hex" data-speed="0.5" data-hex="12" style="--x:70%;--y:6%"></pre>
+        <div class="shard shard--block" data-speed="-0.5" style="--x:20%;--y:94%;--w:320px;--h:4px;--c:var(--cyan)"></div>
+        <span class="shard shard--ghost" data-speed="0.2" style="--x:2%;--y:50%">STACK</span>
+      </div>
+
+      <div class="sect-inner">
+        <header class="sect-head">
+          <span class="idx">03</span>
+          <h2 class="glitch glitchable" data-text="DRIVERS / STACK">DRIVERS / STACK</h2>
+          <span class="rule"></span>
+          <span class="meta">lsmod | sort</span>
+        </header>
+
+        <div class="stack">
+          <div class="stack-group">
+            <h3>architecture</h3>
+            <ul><li>Domain-Driven Design</li><li>CQRS / MediatR</li><li>Microservices</li><li>Agent-based distributed systems</li><li>REST API design</li></ul>
+          </div>
+          <div class="stack-group">
+            <h3>infrastructure</h3>
+            <ul><li>Kubernetes</li><li>Docker / Compose</li><li>Windows &amp; Linux servers</li><li>PowerShell automation</li><li>Serilog · Grafana Loki</li></ul>
+          </div>
+          <div class="stack-group">
+            <h3>cloud &amp; delivery</h3>
+            <ul><li>Azure</li><li>Azure DevOps Pipelines</li><li>GitHub Actions</li><li>DTAP environments</li><li>Release orchestration</li></ul>
+          </div>
+          <div class="stack-group">
+            <h3>quality</h3>
+            <ul><li>Playwright</li><li>xUnit / NUnit · TDD</li><li>Postman / API testing</li><li>Security testing</li><li>Regression gating</li></ul>
+          </div>
+          <div class="stack-group">
+            <h3>languages</h3>
+            <ul><li>C# / .NET 8</li><li>TypeScript / JavaScript</li><li>Python</li><li>SQL</li><li>PowerShell</li></ul>
+          </div>
+          <div class="stack-group">
+            <h3>frameworks &amp; data</h3>
+            <ul><li>ASP.NET Core · Blazor</li><li>EF Core · SQL Server</li><li>Vue · React</li><li>Node.js</li><li>Ollama (local LLMs)</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 04 FILES ===== -->
+    <section id="files" class="sect" data-sector="04">
+      <div class="sect-bg" aria-hidden="true">
+        <span class="sect-num">04</span>
+        <div class="shard shard--bars" data-speed="0.4" style="--x:78%;--y:4%;--w:min(22vw,260px);--r:-6deg"></div>
+        <pre class="shard shard--hex" data-speed="-0.25" data-hex="8" style="--x:-2%;--y:40%"></pre>
+        <span class="shard shard--ghost" data-speed="0.55" style="--x:30%;--y:70%">RECOVERED</span>
+        <div class="shard shard--pixels" data-speed="-0.6" style="--x:90%;--y:60%"></div>
+        <div class="shard shard--block" data-speed="0.3" style="--x:48%;--y:98%;--w:200px;--h:8px;--c:var(--magenta)"></div>
+      </div>
+
+      <div class="sect-inner">
+        <header class="sect-head">
+          <span class="idx">04</span>
+          <h2 class="glitch glitchable" data-text="RECOVERED FILES">RECOVERED FILES</h2>
+          <span class="rule"></span>
+          <span class="meta">9 entries · 6 locked</span>
+        </header>
+
+        <div class="files">
+          <div class="file-wrap" data-speed="0.03">
+            <article class="file glitchable">
+              <p class="file-bar"><span>FILE_01</span><span>deploy-orchestrator.bin</span><span class="st st--lock">WORK</span></p>
+              <h3>Deployment Orchestrator</h3>
+              <p>A distributed deployment platform that replaces release-agent behaviour with explicit scheduling. A central web/API schedules PowerShell deployment tasks. Agents on the target servers poll it over JWT-authenticated HTTP, run the scripts and report back. A Blazor UI covers dashboards, server and app inventory, and the scheduler.</p>
+              <ul class="tags"><li>.NET 8</li><li>DDD + CQRS</li><li>Blazor</li><li>EF Core</li><li>JWT agents</li></ul>
+              <p class="file-foot"><span class="denied">SOURCE: ACCESS DENIED</span></p>
+            </article>
+          </div>
+
+          <div class="file-wrap" data-speed="-0.03">
+            <article class="file glitchable">
+              <p class="file-bar"><span>FILE_02</span><span>dtap-talk.md</span><span class="st st--lock">TALK</span></p>
+              <h3>DTAP: Security, Testing &amp; Deployment</h3>
+              <p>Material for a talk on how a small team ships with confidence through Development, Test, Acceptance and Production. It follows two threads, security and testing on one side and deployment on the other, which meet at the same finish line: moving fast without breaking what's live.</p>
+              <ul class="tags"><li>QA strategy</li><li>DTAP</li><li>Security</li><li>Release flow</li></ul>
+              <p class="file-foot"><span class="denied">SOURCE: ACCESS DENIED</span></p>
+            </article>
+          </div>
+
+          <div class="file-wrap" data-speed="0.05">
+            <article class="file file--slip glitchable">
+              <p class="file-bar"><span>FILE_03</span><span>morettamask.exe</span><span class="st st--lock">PRIVATE</span></p>
+              <h3>MorettaMask</h3>
+              <p>GDPR-compliant document redaction with a local LLM. It takes PDF, DOCX, XLSX and images, OCRs scanned pages, and runs two detection passes: a regex pass for deterministic identifiers, then a local model through Ollama for the hard cases. The output is irreversibly redacted, and no content leaves the machine.</p>
+              <ul class="tags"><li>C#</li><li>Ollama</li><li>OCR</li><li>PII / GDPR</li></ul>
+              <p class="file-foot"><span class="denied">SOURCE: ACCESS DENIED</span></p>
+            </article>
+          </div>
+
+          <div class="file-wrap" data-speed="-0.02">
+            <article class="file glitchable">
+              <p class="file-bar"><span>FILE_04</span><span>itty-bitty-intel.py</span><span class="st st--lock">PRIVATE</span></p>
+              <h3>Itty Bitty Intel Tool</h3>
+              <p>A Discord bot and web dashboard that forecasts system activity in EVE Online. It ingests ESI and zKillboard data, aggregates it into 15-minute windows, and scores hunt, target and PvP risk. It also offers jump-range queries, hot clusters, an interactive system map and historical charts.</p>
+              <ul class="tags"><li>Python</li><li>Data pipelines</li><li>Forecasting</li><li>Discord</li></ul>
+              <p class="file-foot"><span class="denied">SOURCE: ACCESS DENIED</span></p>
+            </article>
+          </div>
+
+          <div class="file-wrap" data-speed="0.04">
+            <article class="file glitchable">
+              <p class="file-bar"><span>FILE_05</span><span>renovabilis/</span><span class="st st--ok">PUBLIC</span></p>
+              <h3>Renovabilis</h3>
+              <p>A web dashboard that visualises how weather forecasts relate to renewable electricity production and consumption, with historical and forecast data side by side.</p>
+              <ul class="tags"><li>TypeScript</li><li>Data viz</li><li>Energy</li></ul>
+              <p class="file-foot"><a href="https://github.com/sorrz/Renovabilis" target="_blank" rel="noopener">open source ↗</a></p>
+            </article>
+          </div>
+
+          <div class="file-wrap" data-speed="-0.04">
+            <article class="file glitchable">
+              <p class="file-bar"><span>FILE_06</span><span>wnm.wav</span><span class="st st--lock">PRIVATE</span></p>
+              <h3>WNM: WhiteNoise Machine</h3>
+              <p>A four-track chillstep drum-and-bass record rendered entirely from code, with no DAW and no plugins. numpy synthesises every drum, bass note, pad and chord, and every voice has a synthesis fallback, so a clean clone renders with nothing downloaded.</p>
+              <ul class="tags"><li>Python</li><li>numpy</li><li>DSP</li><li>Generative audio</li></ul>
+              <p class="file-foot"><span class="denied">SOURCE: ACCESS DENIED</span></p>
+            </article>
+          </div>
+
+          <div class="file-wrap" data-speed="0.02">
+            <article class="file glitchable">
+              <p class="file-bar"><span>FILE_07</span><span>einherjar-registry/</span><span class="st st--ok">PUBLIC</span></p>
+              <h3>The Einherjar Registry</h3>
+              <p>An educational ASP.NET Core MVC CRUD app that shows how a service layer talks to a DbContext through a handler pattern, with unit tests included. It's MIT-licensed and written for teaching.</p>
+              <ul class="tags"><li>ASP.NET Core</li><li>SQL Server</li><li>Unit tests</li></ul>
+              <p class="file-foot"><a href="https://github.com/sorrz/TheEinherjarRegistry" target="_blank" rel="noopener">open source ↗</a></p>
+            </article>
+          </div>
+
+          <div class="file-wrap" data-speed="-0.05">
+            <article class="file file--slip glitchable">
+              <p class="file-bar"><span>FILE_08</span><span>clonewars/</span><span class="st st--lock">LOCAL</span></p>
+              <h3>CloneWars</h3>
+              <p>A neon browser RTS prototype: a Phaser 3 client, an authoritative Node.js WebSocket server, and shared message contracts in a single workspace.</p>
+              <ul class="tags"><li>Phaser 3</li><li>Node.js</li><li>WebSockets</li></ul>
+              <p class="file-foot"><span class="denied">SOURCE: ACCESS DENIED</span></p>
+            </article>
+          </div>
+
+          <div class="file-wrap" data-speed="0.03">
+            <article class="file glitchable">
+              <p class="file-bar"><span>FILE_09</span><span>page-ruler/</span><span class="st st--ok">PUBLIC</span></p>
+              <h3>Page Ruler</h3>
+              <p>A lightweight Chrome extension for measuring and overlaying guides on any web page. Click and drag to draw rulers, boxes or lines, with live dimensions, spacing and angles.</p>
+              <ul class="tags"><li>JavaScript</li><li>Chrome extension</li></ul>
+              <p class="file-foot"><a href="https://github.com/sorrz/page-ruler-extension" target="_blank" rel="noopener">open source ↗</a></p>
+            </article>
+          </div>
+        </div>
+
+        <p class="more">Also in the logs: <a href="https://github.com/sorrz/vsCTF2022-What_Is_The_Flag" target="_blank" rel="noopener">a vsCTF 2022 write-up</a>, an accessibility-first manual reader, a guild attendance system with 80+ unit tests, and <a href="https://github.com/sorrz?tab=repositories" target="_blank" rel="noopener">everything else on GitHub ↗</a></p>
+      </div>
+    </section>
+
+    <!-- ===== 05 EOT ===== -->
+    <section id="eot" class="sect eot" data-sector="05">
+      <div class="sect-bg" aria-hidden="true">
+        <span class="sect-num">05</span>
+        <div class="shard shard--bars" data-speed="0.35" style="--x:60%;--y:20%;--w:min(40vw,520px);--r:2deg"></div>
+        <pre class="shard shard--hex" data-speed="-0.3" data-hex="7" style="--x:8%;--y:10%"></pre>
+      </div>
+
+      <div class="sect-inner">
+        <header class="sect-head">
+          <span class="idx">05</span>
+          <h2 class="glitch glitchable" data-text="CONTACT">CONTACT</h2>
+          <span class="rule"></span>
+          <span class="meta">open channel</span>
+        </header>
+
+        <p class="eot-big glitch glitch--loud glitchable" data-text="END OF TRANSMISSION">END OF TRANSMISSION</p>
+        <p class="eot-text">Signal's still up. If you want to talk testing, pipelines, platforms or architecture, reach me here:</p>
+        <ul class="links">
+          <li><a href="https://github.com/sorrz" target="_blank" rel="noopener"><span>github</span> /sorrz ↗</a></li>
+        </ul>
+      </div>
+      <footer class="foot">
+        <span>© <span id="year">2026</span> Dan Stjärnborg</span>
+        <span>no frames were harmed. several were dropped.</span>
+      </footer>
+    </section>
+  </main>
+
+  <!-- A frozen error dialog. It holds in place like a crashed overlay. -->
+  <aside class="errbox" id="errbox" aria-label="System notice" hidden>
+    <p class="errbox-title"><span>⚠ display.sys</span><span aria-hidden="true">✕</span></p>
+    <p class="errbox-body">The display driver stopped responding and has recovered.<br><small>0x0000BAD · FRAMEBUFFER_DESYNC</small></p>
+    <p class="errbox-actions">
+      <button type="button" id="err-retry">retry</button>
+      <button type="button" id="err-ignore">ignore</button>
+    </p>
+  </aside>
+
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>
